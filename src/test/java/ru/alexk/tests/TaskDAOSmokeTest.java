@@ -47,6 +47,7 @@ public class TaskDAOSmokeTest {
     public void findById() {
         //-----------------------------------
         User user = new User("Kevin", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         Project project = new Project();
         project.setCreationDate(new Date());
         project.setDescription("Simple project description");
@@ -99,6 +100,7 @@ public class TaskDAOSmokeTest {
     public void create() {
         //-----------------------------------
         User user = new User("Kevin", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         Project project = new Project();
         project.setCreationDate(new Date());
         project.setDescription("Simple project description");
@@ -150,6 +152,7 @@ public class TaskDAOSmokeTest {
     public void delete() {
         //-----------------------------------
         User user = new User("Kevin", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         Project project = new Project();
         project.setCreationDate(new Date());
         project.setDescription("Simple project description");
@@ -202,6 +205,7 @@ public class TaskDAOSmokeTest {
     public void update() {
         //-----------------------------------
         User user = new User("Kevin", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         Project project = new Project();
         project.setCreationDate(new Date());
         project.setDescription("Simple project description");

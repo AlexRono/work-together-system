@@ -14,7 +14,7 @@ public class Task {
     private int id;
 
     //people
-    @ManyToOne
+    @ManyToOne(optional = false)
     private User creator;
 
     @ManyToOne
@@ -22,18 +22,23 @@ public class Task {
 
     //dates
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dueDate;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date resolutionDate;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastCommentedDate;
 
     //details
@@ -43,11 +48,13 @@ public class Task {
     public enum TaskPriority{TRIVIAL,MINOR,MAJOR,CRITICAL}
 
     @Column(length = 15,nullable = false)
+    @Enumerated
     private TaskPriority taskPriority;
 
     public enum TaskStatus{OPEN,INPROGRESS,DONE}
 
     @Column(length = 50,nullable = false)
+    @Enumerated
     private TaskStatus taskStatus;
 
     @Column(nullable = false)

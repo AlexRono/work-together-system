@@ -21,13 +21,16 @@ public class Project {
 
     public enum ProjectStatus {ACTIVE,PAUSED,CLOSED;}
     @Column(length = 10, nullable = false)
+    @Enumerated
     private ProjectStatus projectStatus;
 
     //dates
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dueDate;
 
     //foreign keys

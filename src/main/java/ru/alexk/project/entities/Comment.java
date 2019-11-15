@@ -10,10 +10,11 @@ public class Comment {
     @GeneratedValue
     private int id;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private User author;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
     @Column(nullable = false)

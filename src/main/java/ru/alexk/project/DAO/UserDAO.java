@@ -1,9 +1,11 @@
 package ru.alexk.project.DAO;
 
+import org.springframework.stereotype.Repository;
 import ru.alexk.project.entities.User;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 
+@Repository
 public class UserDAO {
     private final EntityManager manager;
     public UserDAO(EntityManager manager) {this.manager = manager;}
@@ -22,6 +24,12 @@ public class UserDAO {
         return manager.createQuery(
                 "from User where nickname = :n",User.class
         ).setParameter("n", nick).getSingleResult();
+    }
+
+    public User findByNickAndPassword(String nick, String password){
+        return manager.createQuery(
+                "from User where nickname = :n and password = :p",User.class
+        ).setParameter("n", nick).setParameter("p", password).getSingleResult();
     }
 
     public void create(User user){

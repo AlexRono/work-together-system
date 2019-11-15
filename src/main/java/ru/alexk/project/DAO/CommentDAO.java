@@ -1,9 +1,11 @@
 package ru.alexk.project.DAO;
 
+import org.springframework.stereotype.Repository;
 import ru.alexk.project.entities.Comment;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 
+@Repository
 public class CommentDAO {
     private final EntityManager manager;
     public CommentDAO(EntityManager manager) {this.manager = manager;}

@@ -46,6 +46,7 @@ public class CommentDAOSmokeTest {
         //---------------------------
         Comment comment = new Comment();
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         comment.setAuthor(user);
         comment.setCommentText("Simple comment text");
@@ -63,6 +64,7 @@ public class CommentDAOSmokeTest {
         //---------------------------
         Comment comment = new Comment();
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         comment.setAuthor(user);
         comment.setCommentText("Simple comment text");
@@ -79,6 +81,7 @@ public class CommentDAOSmokeTest {
         //---------------------------
         Comment comment = new Comment();
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         comment.setAuthor(user);
         comment.setCommentText("Simple comment text");
@@ -97,6 +100,7 @@ public class CommentDAOSmokeTest {
         //---------------------------
         Comment comment = new Comment();
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         comment.setAuthor(user);
         comment.setCommentText("Simple comment text");

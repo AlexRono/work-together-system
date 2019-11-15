@@ -40,6 +40,7 @@ public class UserDAOSmokeTest {
     @Test
     public void findById() {
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         User foundUser = userDAO.findById(user.getId());
         assertEquals(user,foundUser);
@@ -48,14 +49,26 @@ public class UserDAOSmokeTest {
     @Test
     public void findByNickname() {
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         User foundUser = userDAO.findByNickname("SteveB");
         assertEquals(user,foundUser);
     }
 
     @Test
+    public void findByNickAndPassword(){
+        User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
+        userDAO.create(user);
+        User foundUser = userDAO.findByNickAndPassword("SteveB","password");
+        assertEquals(user,foundUser);
+
+    }
+
+    @Test
     public void create() {
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         assertNotNull(manager.find(User.class,user.getId()));
     }
@@ -63,6 +76,7 @@ public class UserDAOSmokeTest {
     @Test
     public void delete() {
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         long userID = user.getId();
         userDAO.delete(user);
@@ -72,6 +86,7 @@ public class UserDAOSmokeTest {
     @Test
     public void update() {
         User user = new User("SteveB", User.ProjectAccessRole.USER);
+        user.setPassword("password");
         userDAO.create(user);
         long userID = user.getId();
         user.setNickname("SteveB1985");

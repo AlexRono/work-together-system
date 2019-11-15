@@ -17,9 +17,15 @@ public class User {
     public String getNickname() {return nickname;}
     public void setNickname(String nickname) {this.nickname = nickname;}
 
+    @Column(length = 50,unique = false,nullable = false)
+    private String password;
+    public String getPassword() {return password;}
+    public void setPassword(String password) {this.password = password;}
+
     public enum ProjectAccessRole {ADMIN,USER,NOACCESS}
 
     @Column(name = "projectAccessRole", length = 20,nullable = false)
+    @Enumerated
     private ProjectAccessRole accessLevel;
     public ProjectAccessRole getAccessLevel() {return accessLevel;}
     public void setAccessLevel(ProjectAccessRole accessLevel) {this.accessLevel = accessLevel;}

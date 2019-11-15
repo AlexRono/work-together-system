@@ -1,10 +1,12 @@
 package ru.alexk.project.DAO;
 
+import org.springframework.stereotype.Repository;
 import ru.alexk.project.entities.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 
+@Repository
 public class ProjectDAO {
     private final EntityManager manager;
     public ProjectDAO(EntityManager manager) {this.manager = manager;}
